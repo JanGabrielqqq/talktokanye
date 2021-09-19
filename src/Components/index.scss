@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  .kanye {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-image: url(../images/kanye.jpg);
+    background-size: cover;
+    position: relative;
+    top: 60px;
+    box-shadow: 1px 1px 1px 1px rgb(139, 139, 139);
+  }
+}
+.text {
+  animation: floatup 1s both;
+  text-align: center;
+}
+
+.chatbox {
+  height: 400px;
+  width: 300px;
+
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 0px 2px 10px 2px rgb(90, 90, 90);
+}
+
+.content {
+  width: 100%;
+  height: 87%;
+  scroll-behavior: smooth;
+  border-radius: 10px 10px 0 0;
+  padding: 10px;
+  bottom: 0%;
+  position: relative;
+
+  .chat-container {
+    max-height: 98%;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    scroll-behavior: smooth;
+    hyphens: auto;
+  }
+}
+.chat-container::-webkit-scrollbar {
+  display: none;
+}
+.input {
+  display: flex;
+  width: 100%;
+  height: 13%;
+  background-color: #5ca6fa;
+  border-radius: 7px 7px 10px 10px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-text {
+  border-radius: 5px;
+  width: 90%;
+  height: auto;
+  border: none;
+  outline: none;
+  padding: 8px;
+}
+
+.userText {
+  margin-top: 5px;
+  color: white;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: right;
+  clear: both;
+  animation: floatup 0.5s forwards;
+}
+
+.userText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background: #5ca6fa;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-right-radius: 2px;
+  max-width: 80%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.botText {
+  margin-top: 5px;
+  color: #000;
+  font-family: Helvetica;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: left;
+  animation: floatup 0.5s forwards;
+}
+
+.botText span {
+  line-height: 1.5em;
+  display: inline-block;
+  background: #e0e0e0;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom-left-radius: 2px;
+  max-width: 80%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.timeUser {
+  color: rgb(114, 114, 114);
+  font-size: 10px;
+  margin-right: 12px;
+  margin-top: 2px;
+  animation: floatup 0.2s forwards;
+}
+.timeBot {
+  color: rgb(114, 114, 114);
+  font-size: 10px;
+  margin-left: 12px;
+  margin-top: 2px;
+  animation: floatup 0.2s forwards;
+}
+
+.sendButton {
+  background-color: rgba(92, 92, 92, 0);
+  border: none;
+}
+
+.sendImage {
+  width: 20px;
+  margin: 5px;
+  opacity: 0.8;
+}
+
+.sendImage:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@keyframes floatup {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
