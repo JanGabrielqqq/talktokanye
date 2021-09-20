@@ -15,16 +15,29 @@ function Input() {
       : `${date.getHours()}:${date.getMinutes()}`;
 
   const httpResponse = () => {
-    axios.get("https://api.kanye.rest/").then((res) => {
-      const data = {
-        time: time,
-        text: res.data.quote,
-        id: I + 1,
-        isUserInput: false,
-      };
-      ctx.setContentDataHttp(data);
-      setButtonIsDisabled(true);
-    });
+    axios
+      .get("https://api.kanye.rest/")
+      .then((res) => {
+        const data = {
+          time: time,
+          text: res.data.quote,
+          id: I + 1,
+          isUserInput: false,
+        };
+        ctx.setContentDataHttp(data);
+        setButtonIsDisabled(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        const data = {
+          time: time,
+          text: "no comment check your internet ",
+          id: I + 1,
+          isUserInput: false,
+        };
+        ctx.setContentDataHttp(data);
+        setButtonIsDisabled(true);
+      });
   };
 
   const sendMessage = (event) => {

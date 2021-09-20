@@ -7,7 +7,6 @@ function Content() {
   const ref = useRef(null);
   useEffect(() => {
     ref.current.scrollIntoView({ block: "end", behavior: "smooth" });
-    console.log("view");
   }, [ctx.contentData]);
 
   return (
